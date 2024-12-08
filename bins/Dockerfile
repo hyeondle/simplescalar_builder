@@ -27,6 +27,7 @@ RUN dpkg --add-architecture i386 && \
 	python3 \
 	python3-pip \
 	python3-venv \
+	pigz \
     ca-certificates && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
