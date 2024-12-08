@@ -3,7 +3,7 @@ ynu computer architecture subject, cache analyze
 
 
 script : 
-bash script.sh <txt file>
+bash script.sh 'txt file'
 
 -> turn sim's output text file to csv file
 
