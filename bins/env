@@ -1,0 +1,3 @@
+HOST=i386-pc-linux
+IDIR=/home/tester/simplescalar
+TARGET=sslittle-na-sstrix
