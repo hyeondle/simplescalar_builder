@@ -12,6 +12,9 @@ docker
 python3
 - requests
 
+YOU SHOULD SET DOCKER SETTINGS
+- set->features in development->check use rosetta for x86/amd 64 emulation on apple silicon
+
 make help will show you commands
 
 make all
