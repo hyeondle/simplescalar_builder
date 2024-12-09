@@ -129,12 +129,16 @@ repl: block replacement policy (l=LRU, f=FIFO, r=Random)
 ''')
 
 		data = list(map(str, input('Inputs : ').split(' ')))
-		if len(data) != 4 :
+		if len(data) != 4 and len(data) != 1:
 			print('Invalid input')
+			input('press enter to continue...')
 			continue
 
 		tp = "cache" if ins < 5 else "tlb"
-		lorder = f"-{tp}:{rco(ins)} {rco(ins)}:{data[0]}:{data[1]}:{data[2]}:{data[3]}"
+		if len(data) == 1 :
+			lorder = f"-{tp}:{rco(ins)} none"
+		else :
+			lorder = f"-{tp}:{rco(ins)} {rco(ins)}:{data[0]}:{data[1]}:{data[2]}:{data[3]}"
 
 		clear_terminal()
 		print(f'''
