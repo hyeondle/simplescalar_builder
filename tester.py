@@ -145,7 +145,7 @@ repl: block replacement policy (l=LRU, f=FIFO, r=Random)
 		confirm = input()
 		if confirm == 'n' :
 			continue
-		cache[ins] = lorder
+		cache[ins-1] = lorder
 	return cache
 
 def get_order(selection, benchmarks, max_inst, cache) :
