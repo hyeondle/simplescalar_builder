@@ -21,6 +21,9 @@ Select Simulation
 6. Sim-Outorder
 ''')
 
+def default_cache() :
+	return ["-cache:dl1 none", "-cache:dl2 none", "-cache:il1 none", "-cache:il2 none", "-tlb:dtlb none", "-tlb:itlb none"]
+
 def ret_sim_order(selection) :
 	if selection == 1 :
 		return "sim-fast"
@@ -82,7 +85,7 @@ def rco(cache) :
 		return ""
 
 def print_cache_menu() :
-	cache = []
+	cache = default_cache()
 	while True :
 		clear_terminal()
 		print(f'''
@@ -104,7 +107,7 @@ Cache selected: \n{"\n".join(cache)}
 			if ins == 0:
 				break
 			elif ins == 9:
-				cache = []
+				cache = default_cache()
 				continue
 		except ValueError:
 			print("Invalid input. Please enter a number.")
@@ -142,7 +145,7 @@ repl: block replacement policy (l=LRU, f=FIFO, r=Random)
 		confirm = input()
 		if confirm == 'n' :
 			continue
-		cache.append(lorder)
+		cache[ins] = lorder
 	return cache
 
 def get_order(selection, benchmarks, max_inst, cache) :
